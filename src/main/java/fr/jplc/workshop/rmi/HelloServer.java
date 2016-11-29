@@ -8,18 +8,13 @@ public class HelloServer {
 
 		final HelloImpl helloServer = new HelloImpl();
 
-		Naming.rebind(// "//" + InetAddress.getLocalHost().getHostName()
-				// +
+		Naming.rebind(// + InetAddress.getLocalHost().getHostName()
 				"/toto/Hello", helloServer);
 
 		System.out.println("HelloServer bound in registry");
 
-		final Hello helloClient = (Hello) Naming.lookup("/toto/Hello");
-		// InetAddress.getLocalHost().getHostName() + "/HelloServer");
+		final Hello hello = (Hello) Naming.lookup("/toto/Hello");
 
-		// String message = "blank";
-		// message =
-		helloClient.sayHello();
-		// System.out.println(message+"\n");
+		System.out.println("Check OK: Hello object found: " + hello);
 	}
 }

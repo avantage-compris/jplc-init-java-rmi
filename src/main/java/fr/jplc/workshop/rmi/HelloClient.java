@@ -10,6 +10,10 @@ public class HelloClient {
 
 		System.out.println("Hello found in registry");
 
+		System.out.println("Calling remote object Hello...");
+
 		hello.sayHello();
+
+		System.out.println("SUCCESS");
 	}
 }
